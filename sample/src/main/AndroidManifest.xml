@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="cn.carbs.android.gregorianlunarcalendar"
+<manifest package="com.arover.widget.datepicker.sample"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

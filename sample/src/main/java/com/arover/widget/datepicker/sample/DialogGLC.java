@@ -1,4 +1,4 @@
-package cn.carbs.android.gregorianlunarcalendar;
+package com.arover.widget.datepicker.sample;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-import cn.carbs.android.gregorianlunarcalendar.library.data.ChineseCalendar;
-import cn.carbs.android.gregorianlunarcalendar.library.view.GregorianLunarCalendarView;
+import com.arover.widget.datepicker.ChineseCalendar;
+import com.arover.widget.datepicker.DatePickerView;
 import cn.carbs.android.indicatorview.library.IndicatorView;
 
 /**
@@ -24,7 +24,7 @@ public class DialogGLC extends Dialog implements View.OnClickListener, Indicator
 
     private Context mContext;
     private IndicatorView mIndicatorView;
-    private GregorianLunarCalendarView mGLCView;
+    private DatePickerView mGLCView;
     private Button mButtonGetData;
 
     public DialogGLC(Context context) {
@@ -38,7 +38,7 @@ public class DialogGLC extends Dialog implements View.OnClickListener, Indicator
         setContentView(R.layout.dialog_glc);
         initWindow();
 
-        mGLCView = (GregorianLunarCalendarView) this.findViewById(R.id.calendar_view);
+        mGLCView = (DatePickerView) this.findViewById(R.id.calendar_view);
 //        mGLCView.init();//init has no scroll effect, to today
         mIndicatorView = (IndicatorView) this.findViewById(R.id.indicator_view);
         mIndicatorView.setOnIndicatorChangedListener(this);
@@ -55,7 +55,7 @@ public class DialogGLC extends Dialog implements View.OnClickListener, Indicator
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_get_data:
-                GregorianLunarCalendarView.CalendarData calendarData = mGLCView.getCalendarData();
+                DatePickerView.CalendarData calendarData = mGLCView.getCalendarData();
                 Calendar calendar = calendarData.getCalendar();
                 String showToast = "Gregorian : " + calendar.get(Calendar.YEAR) + "-"
                         + (calendar.get(Calendar.MONTH) + 1) + "-"

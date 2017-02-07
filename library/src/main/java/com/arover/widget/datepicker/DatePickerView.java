@@ -1,4 +1,4 @@
-package cn.carbs.android.gregorianlunarcalendar.library.view;
+package com.arover.widget.datepicker;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,12 +8,9 @@ import android.widget.LinearLayout;
 
 import java.util.Calendar;
 
-import cn.carbs.android.gregorianlunarcalendar.library.R;
-import cn.carbs.android.gregorianlunarcalendar.library.data.ChineseCalendar;
-import cn.carbs.android.gregorianlunarcalendar.library.util.Util;
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
-public class GregorianLunarCalendarView extends LinearLayout implements NumberPickerView.OnValueChangeListener{
+public class DatePickerView extends LinearLayout implements NumberPickerView.OnValueChangeListener{
 
     private static final int DEFAULT_GREGORIAN_COLOR = 0xff3388ff;
     private static final int DEFAULT_LUNAR_COLOR = 0xffee5544;
@@ -85,18 +82,18 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     private int mSelectTextSize;
 
 
-    public GregorianLunarCalendarView(Context context) {
+    public DatePickerView(Context context) {
         super(context);
         initInternal(context);
     }
 
-    public GregorianLunarCalendarView(Context context, AttributeSet attrs) {
+    public DatePickerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttr(context, attrs);
         initInternal(context);
     }
 
-    public GregorianLunarCalendarView(Context context, AttributeSet attrs, int defStyle) {
+    public DatePickerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initAttr(context, attrs);
         initInternal(context);
@@ -118,16 +115,16 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
         if (attrs == null) {
             return;
         }
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.GregorianLunarCalendarView);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DatePickerView);
 
 
-        mScrollAnim = a.getBoolean(R.styleable.GregorianLunarCalendarView_glcv_ScrollAnimation, true);
-        mThemeColorG = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_GregorianThemeColor, DEFAULT_GREGORIAN_COLOR);
-        mThemeColorL = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_LunarThemeColor, DEFAULT_LUNAR_COLOR);
-        mNormalTextColor = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_NormalTextColor, DEFAULT_NORMAL_TEXT_COLOR);
-        mDividerColor = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_DividerTextColor, DEFAULT_DIVIDER_COLOR);
-        mNormalTextSize = a.getDimensionPixelSize(R.styleable.GregorianLunarCalendarView_glcv_NormalTexSize, getResources().getDimensionPixelOffset(R.dimen.date_picker_normal_text_size));
-        mSelectTextSize = a.getDimensionPixelSize(R.styleable.GregorianLunarCalendarView_glcv_SelectTexSize, getResources().getDimensionPixelOffset(R.dimen.date_picker_select_text_size));
+        mScrollAnim = a.getBoolean(R.styleable.DatePickerView_enableScrollAnimation, true);
+        mThemeColorG = a.getColor(R.styleable.DatePickerView_gregorianThemeColor, DEFAULT_GREGORIAN_COLOR);
+        mThemeColorL = a.getColor(R.styleable.DatePickerView_lunarThemeColor, DEFAULT_LUNAR_COLOR);
+        mNormalTextColor = a.getColor(R.styleable.DatePickerView_normalTextColor, DEFAULT_NORMAL_TEXT_COLOR);
+        mDividerColor = a.getColor(R.styleable.DatePickerView_dividerColor, DEFAULT_DIVIDER_COLOR);
+        mNormalTextSize = a.getDimensionPixelSize(R.styleable.DatePickerView_normalTexSize, getResources().getDimensionPixelOffset(R.dimen.date_picker_normal_text_size));
+        mSelectTextSize = a.getDimensionPixelSize(R.styleable.DatePickerView_selectTexSize, getResources().getDimensionPixelOffset(R.dimen.date_picker_select_text_size));
         a.recycle();
     }
 

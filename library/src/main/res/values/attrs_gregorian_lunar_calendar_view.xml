@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="GregorianLunarCalendarView">
-        <attr name="glcv_ScrollAnimation" format="reference|boolean" />
-        <attr name="glcv_GregorianThemeColor" format="reference|color" />
-        <attr name="glcv_LunarThemeColor" format="reference|color" />
-        <attr name="glcv_DividerTextColor" format="reference|color" />
-        <attr name="glcv_NormalTextColor" format="reference|color" />
-        <attr name="glcv_NormalTexSize" format="reference|dimension" />
-        <attr name="glcv_SelectTexSize" format="reference|dimension" />
+    <declare-styleable name="DatePickerView">
+        <attr name="enableScrollAnimation" format="reference|boolean" />
+        <attr name="gregorianThemeColor" format="reference|color" />
+        <attr name="lunarThemeColor" format="reference|color" />
+        <attr name="dividerColor" format="reference|color" />
+        <attr name="normalTextColor" format="reference|color" />
+        <attr name="normalTexSize" format="reference|dimension" />
+        <attr name="selectTexSize" format="reference|dimension" />
     </declare-styleable>
 
 </resources>

@@ -44,7 +44,7 @@ https://github.com/Carbs0126/NumberPickerView<br>
 ##使用方法：<br>
 1.xml中声明：
 ```
-    <cn.carbs.android.gregorianlunarcalendar.library.view.GregorianLunarCalendarView
+    <com.arover.widget.GregorianLunarCalendarView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

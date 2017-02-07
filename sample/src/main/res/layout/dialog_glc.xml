@@ -18,14 +18,14 @@
         app:iv_IndicatorTextArray="@array/indicator_string_array"
         app:iv_IndicatorTextSize="16dp" />
 
-    <cn.carbs.android.gregorianlunarcalendar.library.view.GregorianLunarCalendarView
+    <com.arover.widget.datepicker.DatePickerView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        app:glcv_GregorianThemeColor="@color/colorGregorian"
-        app:glcv_LunarThemeColor="@color/colorLunar"
-        app:glcv_NormalTextColor="#FF777777"
-        app:glcv_ScrollAnimation="true" />
+        app:gregorianThemeColor="@color/colorGregorian"
+        app:lunarThemeColor="@color/colorLunar"
+        app:normalTextColor="#FF777777"
+        app:enableScrollAnimation="true" />
 
     <Button
         android:id="@+id/button_get_data"

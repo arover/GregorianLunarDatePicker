@@ -1,4 +1,4 @@
-<manifest package="cn.carbs.android.gregorianlunarcalendar.library"
+<manifest package="com.arover.widget.datepicker"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "cn.carbs.android.gregorianlunarcalendar"
+        applicationId "com.arover.widget.datepicker.sample"
         minSdkVersion 11
         targetSdkVersion 17
         versionCode 1

@@ -1,4 +1,4 @@
-package cn.carbs.android.gregorianlunarcalendar;
+package com.arover.widget.datepicker.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-import cn.carbs.android.gregorianlunarcalendar.library.data.ChineseCalendar;
-import cn.carbs.android.gregorianlunarcalendar.library.view.GregorianLunarCalendarView;
+import com.arover.widget.datepicker.ChineseCalendar;
+import com.arover.widget.datepicker.DatePickerView;
 import cn.carbs.android.indicatorview.library.IndicatorView;
 
 public class ActivityMain extends AppCompatActivity implements View.OnClickListener,
@@ -19,7 +19,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
     //indicator view used to indicate and switch gregorien/lunar mode
     private IndicatorView mIndicatorView;
-    private GregorianLunarCalendarView mGLCView;
+    private DatePickerView mGLCView;
     private TextView mChangedDate;
     private Button mButtonGetData;
     private Button mButtonShowDialog;
@@ -29,7 +29,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mGLCView = (GregorianLunarCalendarView) this.findViewById(R.id.calendar_view);
+        mGLCView = (DatePickerView) this.findViewById(R.id.calendar_view);
         mGLCView.init();//init has no scroll effection, to today
         mGLCView.getYearPickerView().setSelectedTextColor(Color.BLACK);
         mGLCView.getMonthPickerView().setSelectedTextColor(Color.BLACK);
@@ -46,9 +46,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         mButtonShowDialog = (Button) this.findViewById(R.id.button_in_dialog);
         mButtonShowDialog.setOnClickListener(this);
         mChangedDate = (TextView)this.findViewById(R.id.tv_changed_date);
-        mGLCView.setOnDateChangedListener(new GregorianLunarCalendarView.OnDateChangedListener(){
+        mGLCView.setOnDateChangedListener(new DatePickerView.OnDateChangedListener(){
             @Override
-            public void onDateChanged(GregorianLunarCalendarView.CalendarData calendarData) {
+            public void onDateChanged(DatePickerView.CalendarData calendarData) {
                 Calendar calendar = calendarData.getCalendar();
                 String showToast = "Gregorian : " + calendar.get(Calendar.YEAR) + "-"
                         + (calendar.get(Calendar.MONTH) + 1) + "-"
@@ -65,7 +65,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_get_data:
-                GregorianLunarCalendarView.CalendarData calendarData = mGLCView.getCalendarData();
+                DatePickerView.CalendarData calendarData = mGLCView.getCalendarData();
                 Calendar calendar = calendarData.getCalendar();
                 String showToast = "Gregorian : " + calendar.get(Calendar.YEAR) + "-"
                         + (calendar.get(Calendar.MONTH) + 1) + "-"
