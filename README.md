@@ -13,6 +13,8 @@
 静态截图以及渐变效果
 
 ##说明
+###Gradle:
+`compile 'com.github.arover:GregorianLunarDatePicker:v1.0'`
 ###上一个版本
 上一个版本的`GregorianLunarCalendar`通过`NumberPicker`构造的日期选择器，可定制性较差，如：<br>
 1.每个`NumberPicker`只能显示3个选项;<br>
