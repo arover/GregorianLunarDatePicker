@@ -6,6 +6,7 @@
         <attr name="glcv_GregorianThemeColor" format="reference|color" />
         <attr name="glcv_LunarThemeColor" format="reference|color" />
         <attr name="glcv_NormalTextColor" format="reference|color" />
+        <attr name="glcv_DividerTextColor" format="reference|color" />
     </declare-styleable>
 
 </resources>

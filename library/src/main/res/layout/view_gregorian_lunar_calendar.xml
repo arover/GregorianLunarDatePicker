@@ -8,10 +8,21 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:contentDescription="year_picker"
+        android:layout_gravity="center_horizontal"
         app:npv_AlternativeTextArrayWithoutMeasureHint="@array/npv_lunar_year_without_measure_hint"
         app:npv_HintText="@string/year"
         app:npv_RespondChangeOnDetached="false"
-        app:npv_TextSizeHint="12dp" />
+        app:npv_TextSizeHint="12dp"
+        app:npv_DividerHeight="1dp"
+        app:npv_ItemPaddingHorizontal="5dp"
+        app:npv_ItemPaddingVertical="5dp"
+        app:npv_ShowCount="5"
+        app:npv_TextColorNormal="#727272"
+        app:npv_TextColorSelected="@android:color/black"
+        app:npv_DividerColor="#AEAEAE"
+        app:npv_TextSizeNormal="16sp"
+        app:npv_TextSizeSelected="18sp"
+        app:npv_WrapSelectorWheel="true"/>
 
     <cn.carbswang.android.numberpickerview.library.NumberPickerView
         android:id="@+id/picker_month"
@@ -25,7 +36,18 @@
         app:npv_AlternativeTextArrayWithoutMeasureHint="@array/npv_lunar_month_without_measure_hint"
         app:npv_HintText="@string/month"
         app:npv_RespondChangeOnDetached="false"
-        app:npv_TextSizeHint="12dp" />
+        app:npv_TextSizeHint="12dp"
+
+        app:npv_DividerHeight="1dp"
+        app:npv_ItemPaddingHorizontal="5dp"
+        app:npv_ItemPaddingVertical="5dp"
+        app:npv_ShowCount="5"
+        app:npv_TextColorNormal="#727272"
+        app:npv_TextColorSelected="@android:color/black"
+        app:npv_DividerColor="#AEAEAE"
+        app:npv_TextSizeNormal="16sp"
+        app:npv_TextSizeSelected="18sp"
+        app:npv_WrapSelectorWheel="true"/>
 
     <cn.carbswang.android.numberpickerview.library.NumberPickerView
         android:id="@+id/picker_day"
@@ -38,6 +60,17 @@
         app:npv_AlternativeTextArrayWithoutMeasureHint="@array/npv_lunar_day_with_measure_hint"
         app:npv_HintText="@string/day"
         app:npv_RespondChangeOnDetached="false"
-        app:npv_TextSizeHint="12dp" />
+        app:npv_TextSizeHint="12dp"
+
+        app:npv_DividerHeight="1dp"
+        app:npv_ItemPaddingHorizontal="5dp"
+        app:npv_ItemPaddingVertical="5dp"
+        app:npv_ShowCount="5"
+        app:npv_TextColorNormal="#727272"
+        app:npv_TextColorSelected="@android:color/black"
+        app:npv_DividerColor="#AEAEAE"
+        app:npv_TextSizeNormal="16sp"
+        app:npv_TextSizeSelected="18sp"
+        app:npv_WrapSelectorWheel="true"/>
 
 </merge>

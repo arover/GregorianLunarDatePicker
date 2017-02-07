@@ -18,6 +18,7 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     private static final int DEFAULT_GREGORIAN_COLOR = 0xff3388ff;
     private static final int DEFAULT_LUNAR_COLOR = 0xffee5544;
     private static final int DEFAULT_NORMAL_TEXT_COLOR = 0xFF555555;
+    private static final int DEFAULT_DIVIDER_COLOR = 0xFF000000;
 
     private static final int YEAR_START = 1901;
     private static final int YEAR_STOP = 2100;
@@ -56,7 +57,7 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     private int mThemeColorG = DEFAULT_GREGORIAN_COLOR;
     private int mThemeColorL = DEFAULT_LUNAR_COLOR;
     private int mNormalTextColor = DEFAULT_NORMAL_TEXT_COLOR;
-
+    private int mDividerColor;
     /**
      * display values
      */
@@ -80,6 +81,7 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     private boolean mScrollAnim = true;
 
     private OnDateChangedListener mOnDateChangedListener;
+
 
     public GregorianLunarCalendarView(Context context) {
         super(context);
@@ -115,19 +117,13 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
             return;
         }
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.GregorianLunarCalendarView);
-        int n = a.getIndexCount();
-        for (int i = 0; i < n; i++) {
-            int attr = a.getIndex(i);
-            if(attr == R.styleable.GregorianLunarCalendarView_glcv_ScrollAnimation){
-                mScrollAnim = a.getBoolean(attr, true);
-            }else if(attr == R.styleable.GregorianLunarCalendarView_glcv_GregorianThemeColor){
-                mThemeColorG = a.getColor(attr, DEFAULT_GREGORIAN_COLOR);
-            }if(attr == R.styleable.GregorianLunarCalendarView_glcv_LunarThemeColor){
-                mThemeColorL = a.getColor(attr, DEFAULT_LUNAR_COLOR);
-            }if(attr == R.styleable.GregorianLunarCalendarView_glcv_NormalTextColor){
-                mNormalTextColor = a.getColor(attr, DEFAULT_NORMAL_TEXT_COLOR);
-            }
-        }
+
+
+        mScrollAnim = a.getBoolean(R.styleable.GregorianLunarCalendarView_glcv_ScrollAnimation, true);
+        mThemeColorG = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_GregorianThemeColor, DEFAULT_GREGORIAN_COLOR);
+        mThemeColorL = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_LunarThemeColor, DEFAULT_LUNAR_COLOR);
+        mNormalTextColor = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_NormalTextColor, DEFAULT_NORMAL_TEXT_COLOR);
+        mDividerColor = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_DividerTextColor, DEFAULT_DIVIDER_COLOR);
         a.recycle();
     }
 
@@ -144,6 +140,19 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     public void init(Calendar calendar, boolean isGregorian){
         setColor(isGregorian ? mThemeColorG : mThemeColorL, mNormalTextColor);
         setConfigs(calendar, isGregorian, false);
+    }
+
+
+    public NumberPickerView getYearPickerView() {
+        return mYearPickerView;
+    }
+
+    public NumberPickerView getMonthPickerView() {
+        return mMonthPickerView;
+    }
+
+    public NumberPickerView getDayPickerView() {
+        return mDayPickerView;
     }
 
     private void setConfigs(Calendar c, boolean isGregorian, boolean anim){
@@ -206,13 +215,13 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     public void setThemeColor(int themeColor){
         mYearPickerView.setSelectedTextColor(themeColor);
         mYearPickerView.setHintTextColor(themeColor);
-        mYearPickerView.setDividerColor(themeColor);
+        mYearPickerView.setDividerColor(mDividerColor);
         mMonthPickerView.setSelectedTextColor(themeColor);
         mMonthPickerView.setHintTextColor(themeColor);
-        mMonthPickerView.setDividerColor(themeColor);
+        mMonthPickerView.setDividerColor(mDividerColor);
         mDayPickerView.setSelectedTextColor(themeColor);
         mDayPickerView.setHintTextColor(themeColor);
-        mDayPickerView.setDividerColor(themeColor);
+        mDayPickerView.setDividerColor(mDividerColor);
     }
 
     public void setNormalColor(int normalColor){

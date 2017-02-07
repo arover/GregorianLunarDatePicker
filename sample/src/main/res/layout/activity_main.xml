@@ -21,10 +21,11 @@
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        app:glcv_GregorianThemeColor="@color/colorGregorian"
+        app:glcv_GregorianThemeColor="#000000"
         app:glcv_LunarThemeColor="@color/colorLunar"
         app:glcv_NormalTextColor="#FF777777"
-        app:glcv_ScrollAnimation="true" />
+        app:glcv_ScrollAnimation="true"
+        app:glcv_DividerTextColor="#aeaeae"/>
 
     <Button
         android:id="@+id/button_get_data"

@@ -1,5 +1,6 @@
 package cn.carbs.android.gregorianlunarcalendar;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,7 +31,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         mGLCView = (GregorianLunarCalendarView) this.findViewById(R.id.calendar_view);
         mGLCView.init();//init has no scroll effection, to today
-
+        mGLCView.getYearPickerView().setSelectedTextColor(Color.BLACK);
+        mGLCView.getMonthPickerView().setSelectedTextColor(Color.BLACK);
+        mGLCView.getDayPickerView().setSelectedTextColor(Color.BLACK);
         /*Calendar customizedCalendar = Calendar.getInstance();
         customizedCalendar.set((2012), 11, 12);//eg. 2012-12-12
         mGLCView.init(customizedCalendar);//to 2012-12-12*/

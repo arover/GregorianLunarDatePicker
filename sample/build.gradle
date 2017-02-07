@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "cn.carbs.android.gregorianlunarcalendar"
         minSdkVersion 11
-        targetSdkVersion 23
+        targetSdkVersion 17
         versionCode 1
         versionName "1.0"
     }
