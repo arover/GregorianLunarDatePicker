@@ -81,6 +81,8 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
     private boolean mScrollAnim = true;
 
     private OnDateChangedListener mOnDateChangedListener;
+    private int mNormalTextSize;
+    private int mSelectTextSize;
 
 
     public GregorianLunarCalendarView(Context context) {
@@ -124,6 +126,8 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
         mThemeColorL = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_LunarThemeColor, DEFAULT_LUNAR_COLOR);
         mNormalTextColor = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_NormalTextColor, DEFAULT_NORMAL_TEXT_COLOR);
         mDividerColor = a.getColor(R.styleable.GregorianLunarCalendarView_glcv_DividerTextColor, DEFAULT_DIVIDER_COLOR);
+        mNormalTextSize = a.getDimensionPixelSize(R.styleable.GregorianLunarCalendarView_glcv_NormalTexSize, getResources().getDimensionPixelOffset(R.dimen.date_picker_normal_text_size));
+        mSelectTextSize = a.getDimensionPixelSize(R.styleable.GregorianLunarCalendarView_glcv_SelectTexSize, getResources().getDimensionPixelOffset(R.dimen.date_picker_select_text_size));
         a.recycle();
     }
 
@@ -222,6 +226,10 @@ public class GregorianLunarCalendarView extends LinearLayout implements NumberPi
         mDayPickerView.setSelectedTextColor(themeColor);
         mDayPickerView.setHintTextColor(themeColor);
         mDayPickerView.setDividerColor(mDividerColor);
+    }
+
+    public void setPickerTextSize(int normalTextSize, int selecttextSize){
+        // TODO: 2/7/17 set number picker text size
     }
 
     public void setNormalColor(int normalColor){

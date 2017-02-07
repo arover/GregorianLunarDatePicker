@@ -20,7 +20,7 @@
     <cn.carbs.android.gregorianlunarcalendar.library.view.GregorianLunarCalendarView
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
         app:glcv_GregorianThemeColor="#000000"
         app:glcv_LunarThemeColor="@color/colorLunar"
         app:glcv_NormalTextColor="#FF777777"
